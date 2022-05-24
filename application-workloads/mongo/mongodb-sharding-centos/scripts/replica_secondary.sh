@@ -3,12 +3,12 @@
 replSetName=$1
 zabbixServer=$2
 
-install_mongo3() {
+install_mongo5() {
 #create repo
-cat > /etc/yum.repos.d/mongodb-org-3.2.repo <<EOF
-[mongodb-org-3.2]
+cat > /etc/yum.repos.d/mongodb-org-5.0.repo <<EOF
+[mongodb-org-5.0]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/\$releasever/mongodb-org/3.2/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/\$releasever/mongodb-org/5.0/x86_64/
 gpgcheck=0
 enabled=1
 EOF
@@ -100,7 +100,7 @@ install_zabbix() {
 }
 
 
-install_mongo3
+install_mongo5
 disk_format
 install_zabbix
 
