@@ -34,7 +34,7 @@ EOF
 	fi
 
 	#configure
-	sed -i 's/\(bindIp\)/#\1/' /etc/mongod.conf
+	sed -i 's/bindIp: 127.0.0.1/bindIpAll: true/' /etc/mongod.conf
 }
 
 
