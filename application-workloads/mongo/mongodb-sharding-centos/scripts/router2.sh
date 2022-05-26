@@ -82,7 +82,7 @@ install_zabbix
 
 
 #start router server
-mongos --configdb crepset/10.0.0.240:27019,10.0.0.241:27019,10.0.0.242:27019 --port 27017 --logpath /var/log/mongodb/mongos.log --fork --keyFile /etc/mongokeyfile
+mongos --configdb crepset/10.0.0.240:27019,10.0.0.241:27019,10.0.0.242:27019 --port 27017 --bind_ip_all --logpath /var/log/mongodb/mongos.log --fork --keyFile /etc/mongokeyfile
 
 
 #check router server starts or not
@@ -94,7 +94,7 @@ do
 		echo "mongos started successfully"
 		break
 	else
-		mongos --configdb crepset/10.0.0.240:27019,10.0.0.241:27019,10.0.0.242:27019 --port 27017 --logpath /var/log/mongodb/mongos.log --fork --keyFile /etc/mongokeyfile
+		mongos --configdb crepset/10.0.0.240:27019,10.0.0.241:27019,10.0.0.242:27019 --port 27017 --bind_ip_all --logpath /var/log/mongodb/mongos.log --fork --keyFile /etc/mongokeyfile
 		continue
 	fi
 done
